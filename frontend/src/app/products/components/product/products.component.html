@@ -1,0 +1,26 @@
+
+<div class="container" *ngIf="product"  [style.background-image]="'url(' + product?.image + ')'">
+  <div class="overlay">
+
+    <div class="items" ></div>
+    <div class="items head">
+      <p>{{ product.name }}</p>
+
+      <span>{{ product.description }}</span>
+    </div>
+    <div class="items price">
+      <p class="old">${{ product.oldPrice }}</p>
+      <p class="new">${{ product.newPrice }}</p>
+    </div>
+    <div class="items cart">
+      <i class="fa fa-shopping-cart"></i>
+      <span (click)="addToCart(product._id)">ADD TO CART</span>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+

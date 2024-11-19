@@ -1,0 +1,65 @@
+.cartbox{
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  padding:0 20px;
+  margin: 50px 0;
+  margin-top:20%;
+.table .table-striped{
+  background-color: #c61d21;
+}
+
+
+  .table{
+
+    .quantity{
+      display: flex;
+      justify-content: space-between;
+      input{
+        margin: 0 20px;
+      }
+    }
+    tbody{
+      border-top: 1px solid #c61d21;
+      border-bottom: 1px solid #c61d21;
+
+      tr{
+
+        td{
+
+          border-bottom: 0;
+          text-align: center;
+          vertical-align: middle;
+          img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+          }
+        }
+      }
+      input{
+        text-align: center;
+      }
+    }
+  }
+  .headCart{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span{
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+    }
+  }
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Optional: You can also specify padding if needed */
+}
+.alert-warning{
+  margin-top: 30%;
+}
+

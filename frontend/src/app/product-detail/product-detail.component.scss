@@ -1,0 +1,118 @@
+.product-container {
+  background-color: rgba(255, 66, 66, 0.171);
+  border-radius: 2%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.img-card {
+  margin-top: 5%;
+  margin-left: 2%;
+}
+
+.img-card img {
+  width: 400px;
+  height: 40%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.small-Card {
+  margin-top: 15px;
+  margin-bottom: 2%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.small-Card img {
+  display: inline-block;
+  width: 80px;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.product-info {
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 100%;
+}
+.alert{
+
+  width: 70%;
+}
+.product-info h3 {
+  font-size: 32px;
+  font-family: Lato;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.product-info h5 {
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 130%;
+  color: #17696a;
+  margin: 6px 0;
+}
+
+.product-info del {
+  color: #07070791;
+}
+
+.product-info p {
+  color: #000000;
+  margin: 15px 0;
+}
+
+.quantity input {
+  width: 51px;
+  height: 33px;
+  margin-bottom: 15px;
+  padding: 6px;
+}
+
+button {
+  background: #17696a;
+  border-radius: 4px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #ff4242;
+  transition: ease-in 0.4s;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Optional: You can also specify padding if needed */
+}
+@media screen and (max-width: 576px) {
+  .product-container {
+    flex-direction: column;
+    margin-top: 25%;
+    height: 120%;
+  }
+  .img-card img {
+    width: 300px;
+    height: 30%;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-left: 5%;
+  }
+  .small-Card img {
+    width: 80px;
+  }
+
+  .product-info,
+  .product-info p {
+    width: 100%;
+  }
+}

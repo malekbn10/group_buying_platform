@@ -1,0 +1,63 @@
+<div class="prodcontainer">
+
+
+
+  <div class="sidebar">
+    <h3>Categories</h3>
+    <hr>
+    <ul>
+      <li style="font-weight: bold;" (click)="filterByCategory('all')">All</li>
+      <li  class="catego" *ngFor="let category of categories" (click)="filterByCategory(category._id)">
+        <i class="fa fa-arrow-right" aria-hidden="true">    </i>   {{ category.name }}
+      </li>
+
+    </ul>
+    <hr>
+    <h3>Price Range</h3>
+    <hr>
+    <div>
+      <input type="range" class="range" min="5" max="1000" step="10" [(ngModel)]="minPrice" (input)="applyPriceFilter()">
+
+    </div>
+    <div style="margin-left: 25%;">
+       Price: {{ minPrice }}DT
+    </div>
+
+  </div>
+
+  <div class="productssearch">
+    <div class="search">
+      <app-search (searchTerm)="onSearch($event)" ></app-search>
+    </div>
+
+
+    <div class="prod">
+      <div *ngIf="filteredProducts.length === 0">
+        <h1>No products found .</h1>
+      </div>
+      <div class="product-card" *ngFor="let product of filteredProducts" [style.background-image]="'url(' + product?.image + ')'">
+        <div class="overlay">
+          <div class="items">
+            <p>{{ product.name }}</p>
+            <p class="discrip" (click)="navigateTo('product/'+product._id)">{{ product.description }}</p>
+            <p class="old">${{ product.oldPrice }}</p>
+            <p class="new">${{ product.newPrice }}</p>
+            <div class="price-and-buttons">
+              <div class="cart-buttons">
+                <button class="add-to-cart-btn" *ngIf="!addbutton && isLoggedIn " (click)="toggleQuantityInput()">Add to Cart</button>
+                <div class="quantity" *ngIf="addbutton">
+                  <input type="number" class="form-control" [(ngModel)]="amount" min="1">
+                  <button type="button" class="add-btn" (click)="add(product._id); addbutton = false;">Add</button>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="!isLoggedIn">
+              <button class="btn btn-danger"(click)="navigateTo('login')"  >login to add  </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

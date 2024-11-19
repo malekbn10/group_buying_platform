@@ -1,0 +1,32 @@
+<section class="product-container">
+  <!-- left side -->
+  <div class="img-card">
+    <img src="{{ product?.image }}" alt="" id="featured-image">
+    <!-- small img -->
+    <div class="small-Card">
+      <!-- Loop through product images -->
+      <img *ngFor="let item of product?.images" src="{{ item }}" alt="" class="small-Img">
+    </div>
+  </div>
+  <!-- Right side -->
+  <div class="product-info">
+    <h3>Name: {{ product?.name }}</h3>
+    <h5>Price: {{ product?.newPrice }} DT <del>{{ product?.oldPrice }} DT</del></h5>
+    <p>Description: {{ product?.description }}</p>
+    <p>Category: {{ product?.category.name }}</p>
+
+    <div class="price-and-buttons">
+      <div class="cart-buttons">
+        <button class="add-to-cart-btn" *ngIf="!addbutton && isLoggedIn " (click)="toggleQuantityInput()">Add to Cart</button>
+        <div class="quantity" *ngIf="addbutton">
+          <input type="number" class="form-control" [(ngModel)]="amount" min="1">
+          <button type="button" class="add-btn" (click)="add(product._id); addbutton = false;">Add</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!isLoggedIn">
+      <div class="alert alert-warning" role="alert">
+       you have to be logged in to add to card
+      </div>     </div>
+  </div>
+</section>

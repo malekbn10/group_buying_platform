@@ -1,0 +1,245 @@
+$bg: #FEF5DF;
+
+body {
+  background-color: $bg;
+}
+.productssearch{
+  position: relative;
+  margin-left: 12%;
+  margin-top: -55%;
+
+
+}
+
+.sidebar {
+  width: 200px;
+  margin-left: -10%;
+  margin-top: 10%;
+  position: relative;
+  height: 80vh; /* Adjust the width as needed */
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 3%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  list-style: none ;
+  li{
+    list-style: none;
+    cursor: pointer;
+  }
+  .catego{
+    margin-left: 8%;
+    color: #333;
+
+    &:hover {
+      color: #af001b;
+    }
+  }
+  .range{
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-item {
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+.category-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.category-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.category-color {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.prod{
+  background-color: rgba(51, 51, 51, 0.075);
+  height: 180%;
+  border-radius: 3%;
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+h1{
+  margin-top: 20%;
+  margin-left: 20%;
+  color: #af001b;
+
+}
+.product-card {
+
+  position: relative;
+  border-radius: 3%;
+  display: inline-block;
+  width: 20%;
+  height: 250px;
+  padding-top: 2%;
+  padding-left: 1.5%;
+  background-color: black;
+  background-size: cover;
+  cursor: pointer;
+  box-shadow: 0 0 5px #FF416C;
+
+  &:hover {
+    box-shadow: 0 0 10px #FF416C;
+  }
+
+  .overlay {
+    width: 90%;
+    height: 90%;
+    border-radius: 3%;
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    background: rgba(255, 255, 255, 0.9);
+    color: #FF416C; // Use the background color variable directly
+    opacity: 0;
+    transition: all 0.5s;
+    //font-family: 'Playfair Display', serif;
+
+    .items {
+      padding-top: 10%;
+      padding-left: 10px;
+      line-height: 80%;
+      letter-spacing: 3px;
+
+      cursor:auto;
+      background-image: var(--product-image-url); // Use the custom CSS variable for background image
+      .old {
+        text-decoration: line-through;
+        color: lighten(rgb(77, 77, 77),40%);
+      }
+      .discrip{
+        cursor: pointer;
+
+      }
+      .add,i{
+        line-height: 65px;
+        cursor: pointer;
+        color: lighten(rgb(255, 155, 6),20%);
+      }
+    }
+
+
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.price-and-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20%;
+  margin-left: 10%;
+
+.btn-danger{
+  margin-right: 20%;
+  width: 100%;
+
+}
+
+
+  .cart-buttons {
+    display: flex;
+    align-items: center;
+
+    .add-to-cart-btn {
+      background-color: rgba(0, 128, 0,0.5);
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #af001b;
+      }
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      margin-right: 10%;
+
+
+      input {
+        width: 80%;
+        height: 30px;
+        margin-right: 5%;
+        text-align: center;
+      }
+
+      .add-btn {
+        background-color: #d10024;
+        color: #fff;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #af001b;
+        }
+      }
+    }
+  }
+}
+.container:hover .overlay {
+  opacity: 1;
+
+
+  & hr {
+    width: 30px;
+    transition-delay: 0.4s;
+  }
+
+
+}
+.search
+{
+  margin-top: 10%;
+
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Optional: You can also specify padding if needed */
+}
+.img-fluid
+{
+  border-radius: 50%;
+}

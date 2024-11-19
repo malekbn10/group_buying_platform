@@ -1,0 +1,8 @@
+
+<div *ngFor="let product of products">
+  <div class="col-md-12">
+   
+    <app-product [product]="product" (item)="addToCart(product._id)"></app-product>
+  </div>
+</div>
+

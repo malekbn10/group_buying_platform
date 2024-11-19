@@ -1,0 +1,11 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
+.form-gap {
+  padding-top: 70px;
+}
+.container{
+  margin-top: 10%;
+}
+.btn{
+  background: #FF416C;
+}

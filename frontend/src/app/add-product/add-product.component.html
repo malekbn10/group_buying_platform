@@ -1,0 +1,77 @@
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form [formGroup]="productForm">
+      <div class="formbold-steps">
+        <ul>
+          <li [class.active]="currentStep === 1" class="formbold-step-menu1"> <span>1</span> Sign Up </li>
+          <li [class.active]="currentStep === 2" class="formbold-step-menu2"> <span>2</span> Message </li>
+          <li [class.active]="currentStep === 3" class="formbold-step-menu3"> <span>3</span> Confirm </li>
+        </ul>
+      </div>
+
+      <div [class.active]="currentStep === 1" class="formbold-form-step-1">
+        <div class="formbold-input-flex">
+          <div>
+            <label for="name" class="formbold-form-label"> Product name </label>
+            <input type="text" name="name" formControlName="name" id="name" class="formbold-form-input" ngModel />
+          </div>
+          <div>
+            <label for="brand" class="formbold-form-label"> Brand </label>
+            <input type="text" name="brand" formControlName="brand" id="brand" class="formbold-form-input" ngModel />
+          </div>
+        </div>
+
+        <div class="formbold-input-flex">
+          <div>
+            <label for="oldPrice" class="formbold-form-label"> Old Price </label>
+            <input type="number" name="oldPrice" id="oldPrice" formControlName="oldPrice" class="formbold-form-input" ngModel />
+          </div>
+          <div>
+            <label for="newPrice" class="formbold-form-label"> New Price </label>
+            <input type="number" name="newPrice" id="newPrice" formControlName="newPrice" class="formbold-form-input" ngModel />
+          </div>
+        </div>
+
+        <div>
+          <label for="category" class="formbold-form-label"> Category </label>
+          <select name="category" id="category" formControlName="category" class="formbold-form-input" ngModel>
+            <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div [class.active]="currentStep === 2" class="formbold-form-step-2">
+        <div>
+          <label for="description" class="formbold-form-label"> Description </label>
+          <textarea rows="6" name="description" id="description" formControlName="description" placeholder="Type your description" class="formbold-form-input" ngModel></textarea>
+        </div>
+        <div class="formbold-input-flex">
+          <div>
+            <label for="image" class="formbold-form-label"> Select the main image: </label>
+            <input type="file" name="image" id="image"  formControlName="image" class="formbold-form-input" (change)="handleImageInput($event)" />
+          </div>
+          <div>
+            <label for="images" class="formbold-form-label"> Select the other images: </label>
+            <input type="file" name="images" id="images" formControlName="images" class="formbold-form-input" (change)="handleImagesInput($event)" multiple />
+          </div>
+        </div>
+      </div>
+
+      <div [class.active]="currentStep === 3" class="formbold-form-step-3">
+        <div class="formbold-form-confirm">
+          <label for="timing" class="formbold-form-label"> Offer ends: </label>
+          <input type="date" name="timing" id="timing" formControlName="timing" class="formbold-form-input" ngModel />
+        </div>
+        <div>
+          <label for="tot_quantity" class="formbold-form-label"> Total quantity: </label>
+          <input type="number" name="tot_quantity" formControlName="tot_quantity" id="tot_quantity" class="formbold-form-input" ngModel />
+        </div>
+      </div>
+
+      <div class="formbold-form-btn-wrapper">
+        <button type="button" class="formbold-back-btn" (click)="previousStep()"> Back </button>
+        <button type="button" class="formbold-btn" (click)="nextStep()" > {{ currentStep === 3 ? 'Submit' : 'Next Step' }} </button>
+      </div>
+    </form>
+  </div>
+</div>
