@@ -26,7 +26,7 @@ To get started with the backend of our group buying platform, follow these steps
 ● Install Dependencies: Navigate to the project directory and install the required dependencies using npm:
 **npm install**
   
-● Set Environment Variables: Create a .env file in the root directory of the project and add the following configuration:
+● Set Environment Variables: Create a .env file in the root directory of the backend project and add the following configuration:
 ```
 API_URL=/api/v1
 secret=CHOOSE_A_JWT_SECRET
